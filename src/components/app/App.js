@@ -1,57 +1,72 @@
 import React, { Component } from 'react';
-import { Header } from './../header/Header';
-import { Main } from './../main/Main';
-import { Footer } from './../footer/Footer';
+import { Header } from '../header/Header';
+import { SearchForm } from '../searchform/SearchForm';
+import { PokemonList } from '../pokemonlist/PokemonList';
+import { Footer } from '../footer/Footer';
 import './App.css';
 
 class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      pokemonsList: []
+      pokemonList: [],
+      inputSearch: ''
     }
   }
 
-  _fetchPokemonsToApi() {
-    const NUMBER_POKEMONS = 5;
-    for (let i = 1; i <= NUMBER_POKEMONS; i++) {
-      Promise.all([fetch(`https://pokeapi.co/api/v2/pokemon/${i}/`).then(response => response.json())])
-        .then(([pokemons]) => {
-          this.setState({
-            pokemonsList: [...this.state.pokemonsList, pokemons]
-          });
-        });
-    }
+  _handleOnChange = (e) => {
+    const inputValue = e.target.value.toLowerCase();
+    this.setState({
+      inputSearch: inputValue
+    });
+    console.log(this.state.inputSearch);
+  }
+
+  _handleOnSubmit = (e) => {
+    e.preventDefault();
+    alert(this.state.inputSearch);
   }
 
   componentDidMount() {
     this._fetchPokemonsToApi();
   }
 
-  // getPokemons() {
-  //   const pokemonIds = 5;
-  //   let pokemonList = this.state.pokemons;
-  //   for (let i = 1; i <= pokemonIds; i++) {
-  //     fetch(`https://pokeapi.co/api/v2/pokemon/${i}/`)
-  //       .then(response => response.json())
-  //       .then(data => {
-  //         pokemonList.push(data);
-  //         this.setState({
-  //           pokemons: pokemonList
-  //         });
-  //       });
-  //   }
-  // }
+  _fetchPokemonsToApi() {
+    const NUMBER_POKEMONS = 8;
+    for (let i = 1; i <= NUMBER_POKEMONS; i++) {
+      Promise.all([fetch(`https://pokeapi.co/api/v2/pokemon/${i}/`).then(response => response.json())])
+        .then(([pokemons]) => {
+          this.setState({
+            pokemonList: [...this.state.pokemonList, pokemons]
+          });
+        })
+        .catch((error) => {
+          console.error('There was an error while fetching pokemons', error);
+        });
+    }
+  }
+
+  _getFilteredPokemons() {
+    const { pokemonList, inputSearch } = this.state;
+    pokemonList.filter(item => item.name.toLowerCase().includes(inputSearch)).sort((a, b) => a.id - b.id);
+  }
 
   render() {
-    console.log('Lista de pokemons tras el fetch: ', this.state.pokemonsList);
-    return (
-      <div className="app__container">
-        <Header>Soy un Header</Header>
-        <Main />
-        <Footer>By Gloria</Footer>
-      </div>
-    );
+    const { pokemonList } = this.state;
+    return [
+      <Header key="header">POKEDEX</Header>,
+      <main key="main" className="main__container">
+        {this._getFilteredPokemons()}
+        <SearchForm
+          changeInput={this._handleOnChange}
+          submitForm={this._handleOnSubmit}
+        />
+        <PokemonList
+          pokemons={pokemonList}
+        />
+      </main>,
+      <Footer key="footer">Pokedex site by Gloria Fernández, with help from PokéApi</Footer>
+    ];
   }
 }
 

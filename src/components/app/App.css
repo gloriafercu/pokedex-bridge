@@ -10,3 +10,6 @@
   flex-direction: column;
   min-height: 100vh;
   text-align: center; }
+
+.main__container {
+  flex: 1; }
