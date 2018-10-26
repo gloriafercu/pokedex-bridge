@@ -3,16 +3,15 @@ import './SearchForm.css';
 
 export class SearchForm extends Component {
   render() {
-    const { changeInput, submitForm } = this.props;
+    const { changeInput } = this.props;
     return (
-      <form className="search__form" onSubmit={submitForm}>
+      <form className="search__form">
         <input
           type="text"
           className="input__search"
           placeholder="Search your favourite pokémon..."
           onChange={changeInput}
         />
-        <button className="button__search">Search</button>
       </form>
     );
   }

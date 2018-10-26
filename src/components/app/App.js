@@ -15,16 +15,11 @@ class App extends Component {
   }
 
   _handleOnChange = (e) => {
-    const inputValue = e.target.value.toLowerCase();
+    const inputValue = e.target.value;
     this.setState({
-      inputSearch: inputValue
+      inputSearch: inputValue.toLowerCase()
     });
     console.log(this.state.inputSearch);
-  }
-
-  _handleOnSubmit = (e) => {
-    e.preventDefault();
-    alert(this.state.inputSearch);
   }
 
   componentDidMount() {
@@ -48,22 +43,22 @@ class App extends Component {
 
   _getFilteredPokemons() {
     const { pokemonList, inputSearch } = this.state;
-    pokemonList.filter(item => item.name.toLowerCase().includes(inputSearch)).sort((a, b) => a.id - b.id);
+    const filteredPokemons = pokemonList.filter(item => item.name.toLowerCase().includes(inputSearch)).sort((a, b) => a.id - b.id);
+    return (
+      <PokemonList
+        pokemons={filteredPokemons}
+      />
+    );
   }
 
   render() {
-    const { pokemonList } = this.state;
     return [
-      <Header key="header">POKEDEX</Header>,
+      <Header key="header" > POKEDEX</Header>,
       <main key="main" className="main__container">
-        {this._getFilteredPokemons()}
         <SearchForm
           changeInput={this._handleOnChange}
-          submitForm={this._handleOnSubmit}
         />
-        <PokemonList
-          pokemons={pokemonList}
-        />
+        {this._getFilteredPokemons()}
       </main>,
       <Footer key="footer">Pokedex site by Gloria Fernández, with help from PokéApi</Footer>
     ];
