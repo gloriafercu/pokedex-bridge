@@ -19,7 +19,6 @@ class App extends Component {
     this.setState({
       inputSearch: inputValue.toLowerCase()
     });
-    console.log(this.state.inputSearch);
   }
 
   componentDidMount() {
@@ -43,6 +42,7 @@ class App extends Component {
 
   _getFilteredPokemons() {
     const { pokemonList, inputSearch } = this.state;
+    console.log({ pokemonList });
     const filteredPokemons = pokemonList.filter(item => item.name.toLowerCase().includes(inputSearch)).sort((a, b) => a.id - b.id);
     return (
       <PokemonList
@@ -60,7 +60,7 @@ class App extends Component {
         />
         {this._getFilteredPokemons()}
       </main>,
-      <Footer key="footer">Pokedex site by Gloria Fernández, with help from PokéApi</Footer>
+      <Footer key="footer">Pokédex site by Gloria Fernández, with help from PokéApi</Footer>
     ];
   }
 }
