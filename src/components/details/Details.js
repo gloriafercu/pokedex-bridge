@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
+import './Details.css';
 
 export class Details extends Component {
   static propTypes = {
@@ -14,7 +15,7 @@ export class Details extends Component {
 
   render() {
     const poke = this.props.pokemons[0];
-    console.log(poke)
+
     if (poke == undefined) {
       return (
         <div className="details__container error-msg">Sorry, we are having trouble showing pokemon's details, come back to the list</div>

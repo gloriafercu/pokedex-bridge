@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { PokemonCard } from '../pokemoncard/PokemonCard';
-
 import './PokemonList.css';
 
 export class PokemonList extends Component {

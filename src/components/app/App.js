@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
 import { Header } from '../header/Header';
 import { SearchForm } from '../searchform/SearchForm';
+import { Spinner } from '../spinner/Spinner';
 import { PokemonList } from '../pokemonlist/PokemonList';
 import { Details } from '../details/Details';
 import { Footer } from '../footer/Footer';
 import { Switch, Route } from 'react-router-dom';
-
 import './App.css';
 
 class App extends Component {
@@ -37,7 +37,7 @@ class App extends Component {
           .then(response => response.json())
       ])
         .then(([pokemons]) => {
-          const delayMiliseconds = 3500;
+          const delayMiliseconds = 4000;
           setTimeout(() => {
             this.setState({
               pokemonList: [...this.state.pokemonList, pokemons],
@@ -53,8 +53,8 @@ class App extends Component {
 
   _getFilteredPokemons() {
     const { pokemonList, inputSearch } = this.state;
-    console.log({ pokemonList });
     const filteredPokemons = pokemonList.filter(item => item.name.toLowerCase().includes(inputSearch)).sort((a, b) => a.id - b.id);
+
     return (
       <Switch>
         <Route exact path="/" render={() =>
@@ -69,6 +69,7 @@ class App extends Component {
 
   render() {
     const { loading } = this.state;
+
     return (
       <div className="app__container">
         <Header>POKEDEX</Header>
@@ -76,8 +77,9 @@ class App extends Component {
           <SearchForm
             changeInput={this._handleOnChange}
           />
-          {loading ? <div className="loader">Loading...</div>
-            : this._getFilteredPokemons()}
+
+          {loading ? <Spinner /> : this._getFilteredPokemons()}
+
         </main>
         <Footer>Pokédex by Gloria Fernández, with help from <a href="https://pokeapi.co/">PokéApi</a></Footer>
       </div>
