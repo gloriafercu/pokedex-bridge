@@ -26,7 +26,7 @@ export class PokemonCard extends Component {
           <div className="pokemon__img" style={style}></div>
           <div className="pokemon__types">
             {types.map((elem, i) =>
-              <span key={i}>{elem.type.name}</span>)
+              <span key={i} className={`type--${elem.type.name.toLowerCase()}`}> {elem.type.name}</span>)
             }
           </div>
         </div>

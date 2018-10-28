@@ -12,59 +12,61 @@ export class Details extends Component {
     })
   };
 
-
-  // paquito() {
-  //   console.log(this.props);
-  //   const { id } = this.props.match.params;
-  //   // const { match } = this.props;
-  //   console.log({ id });
-  //   // console.log({ match });
-  //   const { pokemons, match } = this.props;
-
-  //   console.log('details', { pokemons, match })
-
-  //   const paco = pokemons.find(item => item.id == id);
-
-  //   console.log(paco[0])
-  // }
-
   render() {
     const poke = this.props.pokemons[0];
-
     console.log(poke)
     if (poke == undefined) {
       return (
-        <div className="details__outside">
-          <div className="details__container error-msg">
-            <div className="details-not-found--msg">No podemos mostrale ahora mismo la información que solicita. Por favor, regrese al listado y seleccione otro teléfono.</div>
-          </div>
-        </div>
+        <div className="details__container error-msg">Sorry, we are having trouble showing pokemon's details, come back to the list</div>
       )
     }
+
     return (
       <section className="pokemon__details__container">
-
-
-        <div className="modal__background"></div>
-        <div className="modal__card">
-          <Link className="link__button--close" to='/'>
-            <div className="button--close">
-              <span className="btn-text">Close</span>
+        <div className="modal__background">
+          <div className="modal__card">
+            <Link className="link__button--close" to='/'>
+              <button className="button--close">
+                <span className="button__text">Close</span>
+              </button>
+            </Link>
+            <div className="pokemon__details__content" >
+              <div className="cover">
+                <img className="front_default" src={poke.sprites.front_default} alt={poke.name} />
+              </div>
+              <div className="picture">
+                <img className=" back_default" src={poke.sprites.back_default} alt={poke.name} />
+              </div>
+              <div className="picture">
+                <img className="front_shiny" src={poke.sprites.front_shiny} alt={poke.name} />
+              </div>
+              <div className="picture">
+                <img className="back_shiny" src={poke.sprites.back_shiny} alt={poke.name} />
+              </div>
+              <div className="info__details">
+                <p className="pokemon__name__details">{poke.name}</p>
+                <div className="info__card">
+                  <div className="pokemon__abilities">
+                    <span className="abilities__title">Abilities: </span>
+                    {poke.abilities.map((elem, i) =>
+                      <span className="ability" key={i}>{elem.ability.name} </span>)}
+                  </div>
+                  <div className="pokemon__weight">
+                    <span className="weight__title">Weight: </span>
+                    <span className="weight__detail">{poke.weight / 10} kg</span>
+                  </div>
+                  <div className="pokemon__height">
+                    <span className="height__title">Height: </span>
+                    <span className="height__detail">
+                      {poke.height / 10} m
+										</span>
+                  </div>
+                </div>
+              </div>
             </div>
-          </Link>
-
-          <p>{poke.name}</p>
-
-          {// <div className="pokemon__details" >
-            //   <div className="cover">
-            //     <img className="front_default" src={item.sprites.front_default} alt={item.name} />
-            //     <span className="details__id">#{item.id.toLocaleString('en-US', { minimumIntegerDigits: 2 })}</span>
-            //   </div>
-            // </div>
-          }
+          </div>
         </div>
       </section>
-
     );
   }
 }

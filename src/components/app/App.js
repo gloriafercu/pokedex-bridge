@@ -31,8 +31,12 @@ class App extends Component {
   _fetchPokemonsToApi() {
     const NUMBER_POKEMONS = 10;
     for (let i = 1; i <= NUMBER_POKEMONS; i++) {
-      Promise.all([fetch(`https://pokeapi.co/api/v2/pokemon/${i}/`).then(response => response.json())])
+      Promise.all([
+        fetch(`https://pokeapi.co/api/v2/pokemon/${i}/`)
+          .then(response => response.json())
+      ])
         .then(([pokemons]) => {
+
           this.setState({
             pokemonList: [...this.state.pokemonList, pokemons]
           });
@@ -69,7 +73,7 @@ class App extends Component {
           />
           {this._getFilteredPokemons()}
         </main>
-        <Footer>Pokédex site by Gloria Fernández, with help from PokéApi</Footer>
+        <Footer>Pokédex by Gloria Fernández, with help from <a href="https://pokeapi.co/">PokéApi</a></Footer>
       </div>
     );
   }
