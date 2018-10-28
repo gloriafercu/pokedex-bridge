@@ -13,7 +13,8 @@ class App extends Component {
     super(props);
     this.state = {
       pokemonList: [],
-      inputSearch: ''
+      inputSearch: '',
+      loading: true
     }
   }
 
@@ -29,17 +30,20 @@ class App extends Component {
   }
 
   _fetchPokemonsToApi() {
-    const NUMBER_POKEMONS = 10;
+    const NUMBER_POKEMONS = 50;
     for (let i = 1; i <= NUMBER_POKEMONS; i++) {
       Promise.all([
         fetch(`https://pokeapi.co/api/v2/pokemon/${i}/`)
           .then(response => response.json())
       ])
         .then(([pokemons]) => {
-
-          this.setState({
-            pokemonList: [...this.state.pokemonList, pokemons]
-          });
+          const delayMiliseconds = 3500;
+          setTimeout(() => {
+            this.setState({
+              pokemonList: [...this.state.pokemonList, pokemons],
+              loading: false
+            })
+          }, delayMiliseconds);
         })
         .catch((error) => {
           console.error('There was an error while fetching pokemons', error);
@@ -64,6 +68,7 @@ class App extends Component {
   }
 
   render() {
+    const { loading } = this.state;
     return (
       <div className="app__container">
         <Header>POKEDEX</Header>
@@ -71,7 +76,8 @@ class App extends Component {
           <SearchForm
             changeInput={this._handleOnChange}
           />
-          {this._getFilteredPokemons()}
+          {loading ? <div className="loader">Loading...</div>
+            : this._getFilteredPokemons()}
         </main>
         <Footer>Pokédex by Gloria Fernández, with help from <a href="https://pokeapi.co/">PokéApi</a></Footer>
       </div>
