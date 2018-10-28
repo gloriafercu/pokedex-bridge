@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
+import { Link } from "react-router-dom";
 import PropTypes from 'prop-types';
+
 import './PokemonCard.css';
 
 export class PokemonCard extends Component {
@@ -11,21 +13,24 @@ export class PokemonCard extends Component {
   };
 
   render() {
-    const { pokemon } = this.props;
-    const { name, id, sprites, types } = pokemon;
+    const { name, id, sprites, types } = this.props.pokemon;
     const style = {
       backgroundImage: `url(${sprites.front_default})`
     }
 
-    return [
-      <h2 className="pokemon__name" key={`name-${id}`}>{name}</h2>,
-      <p className="pokemon__id" key={`id-${id}`}>{id}</p>,
-      <div className="pokemon__img" key={`img-${id}`} style={style}></div>,
-      <div className="pokemon__types" key={`types-${id}`}>
-        {types.map((elem, i) =>
-          <span key={i}>{elem.type.name}</span>)
-        }
-      </div>
-    ];
+    return (
+      <Link className="link__pokemon__card" to={`/details/${id}`}>
+        <div className="card__content">
+          <h2 className="pokemon__name">{name}</h2>
+          <p className="pokemon__id">{id.toLocaleString('en-US', { minimumIntegerDigits: 2 })}</p>
+          <div className="pokemon__img" style={style}></div>
+          <div className="pokemon__types">
+            {types.map((elem, i) =>
+              <span key={i}>{elem.type.name}</span>)
+            }
+          </div>
+        </div>
+      </Link>
+    );
   }
 }

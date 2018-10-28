@@ -2,13 +2,9 @@ import React, { Component } from 'react';
 import { Header } from '../header/Header';
 import { SearchForm } from '../searchform/SearchForm';
 import { PokemonList } from '../pokemonlist/PokemonList';
-import { Details } from '../details/Details';
 import { Footer } from '../footer/Footer';
-import { Switch, Route } from 'react-router-dom';
 
-import './App.css';
-
-class App extends Component {
+export class Home extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -48,31 +44,23 @@ class App extends Component {
     console.log({ pokemonList });
     const filteredPokemons = pokemonList.filter(item => item.name.toLowerCase().includes(inputSearch)).sort((a, b) => a.id - b.id);
     return (
-      <Switch>
-        <Route exact path="/" render={() =>
-          <PokemonList pokemons={filteredPokemons} />
-        } />
-        <Route path="/details/:id" render={(props) =>
-          <Details pokemons={filteredPokemons.filter(poke => poke.id == props.match.params.id)} />
-        } />
-      </Switch>
+      <PokemonList
+        pokemons={filteredPokemons}
+      />
     );
   }
 
   render() {
-    return (
-      <div className="app__container">
-        <Header>POKEDEX</Header>
-        <main className="main__container">
-          <SearchForm
-            changeInput={this._handleOnChange}
-          />
-          {this._getFilteredPokemons()}
-        </main>
-        <Footer>Pokédex site by Gloria Fernández, with help from PokéApi</Footer>
-      </div>
-    );
+    return [
+      <Header key="header" > POKEDEX</Header>,
+      <main key="main" className="main__container">
+        <SearchForm
+          changeInput={this._handleOnChange}
+        />
+        {this._getFilteredPokemons()}
+      </main>,
+      <Footer key="footer">Pokédex site by Gloria Fernández, with help from PokéApi</Footer>
+    ];
   }
 }
 
-export default App;
