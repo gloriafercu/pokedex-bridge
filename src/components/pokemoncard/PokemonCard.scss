@@ -1,14 +1,11 @@
 @import './../../styles/variables';
 @import './../../styles/mixins';
 
-
-
 .link__pokemon__card {
   text-decoration: none;
   color: inherit;
-  
- 
 }
+
 .pokemon__title {
   @include flex(center, space-around);
   border-bottom: 1px solid  $colorLightMidtoneBorder;
@@ -22,7 +19,6 @@
     font-weight: bold;
   }
 }
-
 
 .pokemon__img {
   background-position: center;
