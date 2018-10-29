@@ -1,0 +1,14 @@
+@import './../../styles/variables';
+@import './../../styles/mixins';
+
+.footer__container {
+  @include flex(center, center);
+  width: 100%;
+  height: 75px;
+  background-color: $colorLight;
+  border-top: 1px solid  $colorLightMidtoneBorder;
+  .footer__title {
+    color: $colorDarkMidtone;
+    font-size: 14px;
+  }
+}

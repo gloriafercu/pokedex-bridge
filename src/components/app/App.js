@@ -81,7 +81,7 @@ class App extends Component {
           {loading ? <Spinner /> : this._getFilteredPokemons()}
 
         </main>
-        <Footer>Pokédex by Gloria Fernández, with help from <a href="https://pokeapi.co/">PokéApi</a></Footer>
+        <Footer />
       </div>
     );
   }

@@ -1,5 +1,104 @@
+.link__pokemon__card {
+  text-decoration: none;
+  color: inherit; }
+
+.pokemon__title {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  border-bottom: 1px solid #d3d3d3;
+  padding: 20px 0;
+  background-color: #ffebee; }
+  .pokemon__title .pokemon__name {
+    color: #d50000; }
+  .pokemon__title .pokemon__id {
+    color: #2979ff;
+    font-weight: bold; }
+
 .pokemon__img {
   background-position: center;
   background-repeat: no-repeat;
   height: 150px;
   width: auto; }
+
+.pokemon__types {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-top: 1px solid #d3d3d3;
+  padding-top: 20px; }
+  .pokemon__types .type {
+    padding: 5px 20px;
+    margin: 0 10px;
+    border-radius: 5px;
+    font-weight: bold; }
+    .pokemon__types .type.poison {
+      border: 1px solid #ffadd2;
+      color: #eb2f96;
+      background: #fff0f6; }
+      .pokemon__types .type.poison:hover {
+        background: #eb2f96;
+        color: #ffffff; }
+    .pokemon__types .type.grass {
+      border: 1px solid #b7eb8f;
+      color: #52c41a;
+      background: #f6ffed; }
+      .pokemon__types .type.grass:hover {
+        background: #52c41a;
+        color: #ffffff; }
+    .pokemon__types .type.fire {
+      border: 1px solid #ffbb96;
+      color: #fa541c;
+      background: #fff2e8; }
+      .pokemon__types .type.fire:hover {
+        background: #fa541c;
+        color: #ffffff; }
+    .pokemon__types .type.flying {
+      border: 1px solid  #d3adf7;
+      color: #722ed1;
+      background: #f9f0ff; }
+      .pokemon__types .type.flying:hover {
+        background: #722ed1;
+        color: #ffffff; }
+    .pokemon__types .type.water {
+      border: 1px solid #87e8de;
+      color: #13c2c2;
+      background: #e6fffb; }
+      .pokemon__types .type.water:hover {
+        background: #13c2c2;
+        color: #ffffff; }
+    .pokemon__types .type.bug {
+      border-color: #ffd591;
+      color: #fa8c16;
+      background: #fff7e6; }
+      .pokemon__types .type.bug:hover {
+        background: #fa8c16;
+        color: #ffffff; }
+    .pokemon__types .type.normal {
+      border: 1px solid #adc6ff;
+      color: #2f54eb;
+      background: #f0f5ff; }
+      .pokemon__types .type.normal:hover {
+        background: #2f54eb;
+        color: #ffffff; }
+    .pokemon__types .type.electric {
+      border: 1px solid #ffe58f;
+      color: #faad14;
+      background: #fffbe6; }
+      .pokemon__types .type.electric:hover {
+        background: #faad14;
+        color: #ffffff; }
+    .pokemon__types .type.ground {
+      border: 1px solid #ffa39e;
+      color: #f5222d;
+      background: #fff1f0; }
+      .pokemon__types .type.ground:hover {
+        background: #f5222d;
+        color: #ffffff; }
+    .pokemon__types .type.fairy {
+      border: 1px solid #eaff8f;
+      color: #a0d911;
+      background: #fcffe6; }
+      .pokemon__types .type.fairy:hover {
+        background: #a0d911;
+        color: #ffffff; }

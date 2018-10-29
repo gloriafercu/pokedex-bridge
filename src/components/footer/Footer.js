@@ -1,10 +1,10 @@
 import React from 'react';
 import './Footer.css';
 
-export const Footer = ({ children }) => {
+export const Footer = () => {
   return (
     <footer className="footer__container">
-      <p className="footer__title">{children}</p>
+      <p className="footer__title">Made with <span class="love">❤︎</span> by Gloria Fernández</p>
     </footer>
   );
 }
