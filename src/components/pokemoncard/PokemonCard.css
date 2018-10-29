@@ -13,7 +13,8 @@
     color: #f5222d; }
   .pokemon__title .pokemon__id {
     color: #2f54eb;
-    font-weight: bold; }
+    font-weight: bold;
+    font-family: "Kalam", cursive; }
 
 .pokemon__img {
   background-position: center;
@@ -102,3 +103,25 @@
       .pokemon__types .type.fairy:hover {
         background: #a0d911;
         color: #ffffff; }
+
+.pokemon__evolution {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  margin-bottom: 15px; }
+
+.evolution__title {
+  line-height: 18px;
+  height: 18px;
+  margin-right: 5px;
+  font-weight: bold;
+  color: #4a4a4a; }
+
+.evolution {
+  color: #fa8c16;
+  font-weight: bold;
+  font-family: "Kalam", cursive;
+  letter-spacing: 2;
+  font-size: 20px;
+  line-height: 20px; }

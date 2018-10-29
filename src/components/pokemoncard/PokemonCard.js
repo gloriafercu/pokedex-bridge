@@ -12,7 +12,7 @@ export class PokemonCard extends Component {
   };
 
   render() {
-    const { name, id, sprites, types } = this.props.pokemon;
+    const { name, id, sprites, types, evolutionName } = this.props.pokemon;
     const style = {
       backgroundImage: `url(${sprites.front_default})`
     }
@@ -25,6 +25,10 @@ export class PokemonCard extends Component {
             <p className="pokemon__id">#{id.toLocaleString('en-US', { minimumIntegerDigits: 2 })}</p>
           </div>
           <div className="pokemon__img" style={style}></div>
+          <div className="pokemon__evolution" >
+            <span className="evolution__title">{evolutionName ? `Evolves from: ` : ''}  </span>
+            <span className="evolution">{evolutionName ? `${evolutionName}` : ''}  </span>
+          </div>
           <div className="pokemon__types">
             {types.map((elem, i) =>
               <span key={i} className={`type ${elem.type.name.toLowerCase()}`}>{elem.type.name}</span>)

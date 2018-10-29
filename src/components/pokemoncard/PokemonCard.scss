@@ -17,6 +17,7 @@
   .pokemon__id {
     color: $colorGeekBlue;
     font-weight: bold;
+    font-family: $fontKalam;
   }
 }
 
@@ -127,4 +128,25 @@
       }
     }
   }
+}
+
+.pokemon__evolution {
+@include flex(center, center);
+  width: 100%;
+  margin-bottom: 15px;
+}
+.evolution__title {
+  line-height: 18px;
+  height: 18px;
+  margin-right: 5px;
+  font-weight: bold;
+  color: $colorDarkMidtone;
+}
+.evolution {
+	color: $colorOrange;
+  font-weight: bold;
+  font-family: $fontKalam;
+  letter-spacing: 2;
+	font-size: 20px;
+	line-height: 20px;
 }

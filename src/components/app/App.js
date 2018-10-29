@@ -34,9 +34,15 @@ class App extends Component {
     for (let i = 1; i <= NUMBER_POKEMONS; i++) {
       Promise.all([
         fetch(`https://pokeapi.co/api/v2/pokemon/${i}/`)
+          .then(response => response.json()),
+        fetch(`https://pokeapi.co/api/v2/pokemon-species/${i}/`)
           .then(response => response.json())
+          .then(evolution => evolution.evolves_from_species)
       ])
-        .then(([pokemons]) => {
+        .then(([pokemons, pokemonSpecie]) => {
+          if (pokemonSpecie != null) {
+            pokemons.evolutionName = pokemonSpecie.name;
+          }
           const delayMiliseconds = 4000;
           setTimeout(() => {
             this.setState({
@@ -74,7 +80,6 @@ class App extends Component {
 
   render() {
     const { loading } = this.state;
-
 
     return (
       <div className="app__container">
