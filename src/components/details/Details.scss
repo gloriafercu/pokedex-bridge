@@ -11,53 +11,88 @@
 	background-color: rgba(0, 0, 0, 0.8);
   z-index: 999;
   .modal__card {
+    border-radius: 3px;
     background-color: $colorLight;
+    border: 2px solid $colorDarkMidtone;
+    width: 280px;
   }
 }
 
-.modal__card {
-  height: 350px;
-}
 .cover {
   position: relative;
-  background-image: url('./../../images/Pikachu-cover.jpg');
-  background-position: top center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  height: 200px;
-  width: 300px;
+  padding: 20px 20px 0;
+  background-color: $colorRed;
+  height: 120px;
+}
+
+.link__button--close {
+  @include flex(center, flex-end);
+  text-decoration: none;
+}
+
+.button--close {
+  padding: 8px 12px;
+  background-color: $colorLight;
+  color: $colorDark;
+  font-size: 13px;
+  font-weight: bold;
+  border-radius: 3px;
+  border: 2px solid $colorDarkMidtone;
+  cursor: pointer;
 }
 
 .picture {
   position: absolute;
-  top: 50%;
+  top: 100%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 100px;
-  height: 100px;
+  @include flex(center, center);
+  height: 120px;
+  width: 120px;
   border-radius: 50%;
   background-color: $colorLight;
   box-shadow: 0 2px 10px 1px rgba(0, 0, 0, 0.2);
 }
 
 .info__details {
-  @include flex(center, flex-start);
-  flex-direction: column;
-  color: $colorDark;
+  text-align: left;
+  padding: 70px 20px 10px;
+  line-height: 1.8;
+  .pokemon__name__details {
+    font-size: 26px;
+    margin-bottom: 10px;
+    font-weight: bold;
+    color: $colorDark;
+    text-align: center;
+  }
 }
-.pokemon__name__details {
-  font-size: 20px;
-  font-weight: bold;
-}
-.abilities__title,
+
 .weight__title, 
 .height__title {
   font-weight: bold;
   margin-right: 15px;
+  color: $colorDarkMidtone;
+  font-size: 18px;
 }
-.link__button--close {
-  padding: 10px;
+
+.pokemon__abilities {
+  text-align: center;
+  margin-bottom: 10px;
+  .abilities__title {
+    color: $colorDarkMidtone;
+    font-weight: bold;
+    text-align: center;
+    font-size: 18px;
+  }
+  .ability {
+    color: $colorVolcano;
+    padding:  0 5px;
+    display: inline-block;
+    font-style: i
+  }
 }
-.button__close {
-  padding: 10px;
+
+.weight__detail,
+.height__detail {
+  color: $colorGeekBlue;
 }

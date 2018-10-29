@@ -2,11 +2,11 @@
 @import './../../styles/mixins';
 
 .loader {
+  position: absolute;
 	color: $colorLight;
 	width: 1em;
 	height: 1em;
 	border-radius: 50%;
-	position: absolute;
 	font-size: 5em;
 	text-align: center;
 	top: 50%;

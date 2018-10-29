@@ -7,21 +7,20 @@
   -moz-osx-font-smoothing: grayscale; }
 
 .body__container {
-  background-color: #f0f3f6;
   display: flex;
   align-items: center;
-  justify-content: center; }
+  justify-content: center;
+  background-color: #f0f3f6; }
   .body__container .root__container {
     margin-top: 100px; }
 
 .root__container {
   width: 100%; }
-
-.app__container {
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
-  text-align: center; }
+  .root__container .app__container {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    min-height: 100vh; }
 
 .main__container {
   flex: 1;
@@ -30,6 +29,5 @@
 .not__results {
   font-size: 20px;
   color: #1a1a1a; }
-
-.emoticon {
-  font-size: 20px; }
+  .not__results .emoticon {
+    font-size: 20px; }

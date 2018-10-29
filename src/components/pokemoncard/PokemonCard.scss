@@ -12,10 +12,10 @@
   padding: 20px 0;
   background-color: #ffebee;
   .pokemon__name {
-    color: $colorPrimary;
+    color: $colorRed;
   }
   .pokemon__id {
-    color: $colorSecundary;
+    color: $colorGeekBlue;
     font-weight: bold;
   }
 }
@@ -36,94 +36,93 @@
     margin: 0 10px;
     border-radius: 5px;
     font-weight: bold;
-
     &.poison {
       border: 1px solid #ffadd2;
-      color: #eb2f96;
+      color: $colorMagenta;
       background: #fff0f6;
       &:hover {
-        background: #eb2f96;
+        background: $colorMagenta;
         color: $colorLight;
       }
     }
     &.grass {
       border: 1px solid #b7eb8f;
-      color: #52c41a;
+      color: $colorGreen;
       background: #f6ffed;
       &:hover {
-        background: #52c41a;
+        background: $colorGreen;
         color: $colorLight;
       }
     }
     &.fire {
       border: 1px solid #ffbb96;
-      color: #fa541c;
+      color: $colorVolcano;
       background: #fff2e8;
       &:hover {
-        background: #fa541c;
+        background: $colorVolcano;
         color: $colorLight;
       }
     }
     &.flying {
       border: 1px solid  #d3adf7;
-      color: #722ed1;
+      color: $colorPurple;
       background: #f9f0ff;
       &:hover {
-        background: #722ed1;
+        background: $colorPurple;
         color: $colorLight;
       }
     }
     &.water {
       border: 1px solid #87e8de;
-      color: #13c2c2;
+      color: $colorCyan;
       background: #e6fffb;
       &:hover {
-        background: #13c2c2;
+        background: $colorCyan;
         color: $colorLight;
       }
     }
     &.bug {
-      border-color: #ffd591;
-      color: #fa8c16;
+      border: 1px solid #ffd591;
+      color: $colorOrange;
       background: #fff7e6;
       &:hover {
-        background: #fa8c16;
+        background: $colorOrange;
         color: $colorLight;
       }
     }
     &.normal {
       border: 1px solid #adc6ff;
-      color: #2f54eb;
+      color: $colorGeekBlue;
       background: #f0f5ff;
       &:hover {
-        background: #2f54eb;
+        background: $colorGeekBlue;
         color: $colorLight;
       }
     }
     &.electric {
       border: 1px solid #ffe58f;
-      color: #faad14;
+      color: $colorGold;
       background: #fffbe6;
       &:hover {
-        background:#faad14;
+        background:$colorGold;
         color: $colorLight;
       }
     }
     &.ground {
       border: 1px solid #ffa39e;
-      color: #f5222d;
+      color: $colorRed;
       background: #fff1f0;
       &:hover {
-        background: #f5222d;
+        background: $colorRed;
         color: $colorLight;
       }
     }
     &.fairy {
       border: 1px solid #eaff8f;
-      color: #a0d911;
+      color: $colorLime;
       background: #fcffe6;
       &:hover {
-        background:#a0d911;
+        background:$colorLime;
         color: $colorLight;
       }
     }

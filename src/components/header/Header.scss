@@ -1,7 +1,7 @@
 @import './../../styles/variables';
 @import './../../styles/mixins';
 @font-face {
-  font-family: 'Pokemon Solid';
+  font-family: $fontPokemon;
   src: url('../../fonts/PokemonSolidNormal.eot');
   src: url('../../fonts/PokemonSolidNormal.eot?#iefix') format('embedded-opentype'),
        url('../../fonts/PokemonSolidNormal.woff2') format('woff2'),
@@ -12,6 +12,7 @@
   font-style: normal;
 }
 
+
 .header__container {
   @include flex(center, center);
   position: fixed;
@@ -21,21 +22,42 @@
   height: 100px;
   width: 100%;
   background-color: $colorDark;
+  padding: 0 20px;
   .header__title {
-    font-family: 'Pokemon Solid';
+    font-family: $fontPokemon;
     text-align: center;
-    font-size: 50px;
+    margin-right: 15px;
+    font-size: 35px;
     letter-spacing: 5px;
     transform: rotate(-4deg);
     color: $colorLight;
+    @media #{$large-movil} {
+      font-size: 40px;
+    }
+    @media #{$tablet} {
+      font-size: 50px;
+    }
+    @media #{$desktop} {
+      font-size: 50px;
+    }
   }
 }
 
 .pokeball {
-	width: 85px;
-	padding: 0 20px;
-	animation: loading 10s linear infinite;
+  width: 40px;
+  margin-left: 15px;
+  animation: loading 10s linear infinite;
+  @media #{$large-movil} {
+    width: 50px;
+  }
+  @media #{$tablet} {
+    width: 60px;
+  }
+  @media #{$desktop} {
+    width: 60px;
+  }
 }
+
 @keyframes loading {
 	0% {transform: rotate(0deg);}
 	100% {transform: rotate(360deg);}

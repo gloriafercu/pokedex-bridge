@@ -29,7 +29,7 @@ export class Details extends Component {
             <div className="cover">
               <Link className="link__button--close" to='/'>
                 <button className="button--close">
-                  <span className="button__text">Close</span>
+                  <span className="button__text">Back</span>
                 </button>
               </Link>
               <div className="picture">
@@ -40,9 +40,10 @@ export class Details extends Component {
               <p className="pokemon__name__details">{poke.name}</p>
               <div className="info__card">
                 <div className="pokemon__abilities">
-                  <span className="abilities__title">Abilities: </span>
+                  <p className="abilities__title">Abilities</p>
                   {poke.abilities.map((elem, i) =>
-                    <span className="ability" key={i}>{elem.ability.name} </span>)}
+                    <span className="ability" key={i}>{elem.ability.name} </span>
+                  )}
                 </div>
                 <div className="pokemon__weight">
                   <span className="weight__title">Weight: </span>

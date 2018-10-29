@@ -12,10 +12,19 @@
     width: 100%;
     height: 30px;
     padding: 20px 10px 20px 50px;
-    font-size: inherit;
+    font-size: 14px;
     color: $colorDark;
-    border: 1px solid $colorPrimary;
+    border: 1px solid $colorRed;
     border-radius: 3px;
+    @media #{$large-movil} {
+      font-size: inherit;
+    }
+    @media #{$tablet} {
+      font-size: inherit;
+    }
+    @media #{$desktop} {
+      font-size: inherit;
+    }
   }
 }
 

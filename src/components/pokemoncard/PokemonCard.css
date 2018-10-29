@@ -10,9 +10,9 @@
   padding: 20px 0;
   background-color: #ffebee; }
   .pokemon__title .pokemon__name {
-    color: #d50000; }
+    color: #f5222d; }
   .pokemon__title .pokemon__id {
-    color: #2979ff;
+    color: #2f54eb;
     font-weight: bold; }
 
 .pokemon__img {
@@ -68,7 +68,7 @@
         background: #13c2c2;
         color: #ffffff; }
     .pokemon__types .type.bug {
-      border-color: #ffd591;
+      border: 1px solid #ffd591;
       color: #fa8c16;
       background: #fff7e6; }
       .pokemon__types .type.bug:hover {
