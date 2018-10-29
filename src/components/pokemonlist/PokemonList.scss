@@ -6,8 +6,11 @@
   max-width: 1064px;
   @include grid(1, 30px);
   list-style-type: none;
-  @media #{$tablet} {
+  @media #{$large-movil} {
     @include grid(2, 30px);
+  }
+  @media #{$tablet} {
+    @include grid(3, 30px);
   }
   @media #{$desktop} {
     @include grid(4, 30px);

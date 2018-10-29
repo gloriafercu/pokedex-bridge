@@ -54,6 +54,11 @@ class App extends Component {
   _getFilteredPokemons() {
     const { pokemonList, inputSearch } = this.state;
     const filteredPokemons = pokemonList.filter(item => item.name.toLowerCase().includes(inputSearch)).sort((a, b) => a.id - b.id);
+    if (filteredPokemons.length === 0) {
+      return (
+        <p className="not__results">Sorry! <span className="emoticon" role="img" aria-label="sad"> 😟  </span> Results not found!</p>
+      );
+    }
 
     return (
       <Switch>
@@ -70,9 +75,10 @@ class App extends Component {
   render() {
     const { loading } = this.state;
 
+
     return (
       <div className="app__container">
-        <Header>POKEDEX</Header>
+        <Header>Pokédex</Header>
         <main className="main__container">
           <SearchForm
             changeInput={this._handleOnChange}

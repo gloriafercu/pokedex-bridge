@@ -5,10 +5,15 @@
   grid-template-columns: repeat(1, 1fr);
   grid-gap: 30px;
   list-style-type: none; }
-  @media (min-width: 768px) and (max-width: 1063px) {
+  @media (min-width: 550px) and (max-width: 809px) {
     .pokemonlist__container {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
+      grid-gap: 30px; } }
+  @media (min-width: 810px) and (max-width: 1063px) {
+    .pokemonlist__container {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
       grid-gap: 30px; } }
   @media (min-width: 1064px) {
     .pokemonlist__container {

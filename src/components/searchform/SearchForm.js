@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import Lens from './../../images/lens.svg';
 import './SearchForm.css';
 
 export class SearchForm extends Component {
@@ -6,6 +7,7 @@ export class SearchForm extends Component {
     const { changeInput } = this.props;
     return (
       <form className="search__form">
+        <img className="lens" src={Lens} alt="pokédex" />
         <input
           type="text"
           className="input__search"

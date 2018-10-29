@@ -4,49 +4,16 @@ $colorLight: #ffffff;
 $colorLightMidtone: #f0f3f6;
 $colorLightMidtoneBorder: #d3d3d3;
 $colorMidtone: #777777;
-$colorDarkMidtone: #1a1a1a;
-$colorDark: #000000;
+$colorDarkMidtone: #4a4a4a;
+$colorDark: #1a1a1a;
 $colorPrimary: #d50000;
 $colorSecundary: #2979ff;
-
-// $color-light: #ffffff;
-// $color-light-midtone: #d8d8d8;
-// $color-midtone: #9b9b9b;
-// $color-dark-midtone: #4a4a4a;
-// $color-dark: #000000;
-// $color-primary: #d0021b;
-// $color-secondary: #5e000b;
 
 // Fonts
 
 $fontOpenSans: 'Open Sans', sans-serif;
 
-
-// $font-size-nano: 13px;
-// $font-size-micro: 14px;
-// $font-size-mini: 15px;
-// $font-size-xs: 16px;
-// $font-size-s: 17px;
-// $font-size-m: 18px;
-// $font-size-l: 20px;
-// $font-size-xl: 22px;
-// $font-size-xxl: 26px;
-
-// $line-height: normal;
-// $line-height-xs: 16px;
-// $line-height-m: 22px;
-// $line-height-l: 24px;
-// $line-height-xl: 26px;
-// $line-height-xxl: 30px;
-
-// $font-weight-regular: 400;
-// $font-weight-bold: 700;
-
-// Path images
-
-$pathImages: '../images/';
-
 // Breakpoints
-
-$tablet : '(min-width: 768px) and (max-width: 1063px)';
-$desktop : '(min-width: 1064px)';
+$large-movil: '(min-width: 550px) and (max-width: 809px)';
+$tablet: '(min-width: 810px) and (max-width: 1063px)';
+$desktop: '(min-width: 1064px)';

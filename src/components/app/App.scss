@@ -1,7 +1,6 @@
 @import './../../styles/variables';
 @import './../../styles/mixins';
 
-
 * {
   margin: 0;
   padding: 0;
@@ -14,7 +13,7 @@
   background-color: $colorLightMidtone;
   @include flex(center, center);
   .root__container {
-    margin-top: 80px;
+    margin-top: 100px;
   }
 }
 .root__container {
@@ -30,4 +29,13 @@
 .main__container {
   flex: 1;
   padding: 0 20px;
+}
+
+.not__results {
+  font-size: 20px;
+  color: $colorDark;
+}
+
+.emoticon {
+  font-size: 20px;
 }

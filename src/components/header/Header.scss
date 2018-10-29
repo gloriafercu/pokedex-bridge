@@ -1,5 +1,16 @@
 @import './../../styles/variables';
 @import './../../styles/mixins';
+@font-face {
+  font-family: 'Pokemon Solid';
+  src: url('../../fonts/PokemonSolidNormal.eot');
+  src: url('../../fonts/PokemonSolidNormal.eot?#iefix') format('embedded-opentype'),
+       url('../../fonts/PokemonSolidNormal.woff2') format('woff2'),
+       url('../../fonts/PokemonSolidNormal.woff') format('woff'),
+       url('../../fonts/PokemonSolidNormal.ttf') format('truetype'),
+       url('../../fonts/PokemonSolidNormal.svg#PokemonSolidNormal') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
 
 .header__container {
   @include flex(center, center);
@@ -7,11 +18,25 @@
   top: 0;
   left: 0;
   z-index: 1;
-  height: 80px;
+  height: 100px;
   width: 100%;
-  background-color: $colorDarkMidtone;
+  background-color: $colorDark;
   .header__title {
-
-  color: $colorLight;
+    font-family: 'Pokemon Solid';
+    text-align: center;
+    font-size: 50px;
+    letter-spacing: 5px;
+    transform: rotate(-4deg);
+    color: $colorLight;
   }
+}
+
+.pokeball {
+	width: 85px;
+	padding: 0 20px;
+	animation: loading 10s linear infinite;
+}
+@keyframes loading {
+	0% {transform: rotate(0deg);}
+	100% {transform: rotate(360deg);}
 }

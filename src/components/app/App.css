@@ -12,7 +12,7 @@
   align-items: center;
   justify-content: center; }
   .body__container .root__container {
-    margin-top: 80px; }
+    margin-top: 100px; }
 
 .root__container {
   width: 100%; }
@@ -26,3 +26,10 @@
 .main__container {
   flex: 1;
   padding: 0 20px; }
+
+.not__results {
+  font-size: 20px;
+  color: #1a1a1a; }
+
+.emoticon {
+  font-size: 20px; }
