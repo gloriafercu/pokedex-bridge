@@ -1,0 +1,16 @@
+{
+  "main.css": "./static/css/main.e7321dc9.chunk.css",
+  "main.js": "./static/js/main.7fa1fbde.chunk.js",
+  "main.js.map": "./static/js/main.7fa1fbde.chunk.js.map",
+  "static/js/1.53ba2ff9.chunk.js": "./static/js/1.53ba2ff9.chunk.js",
+  "static/js/1.53ba2ff9.chunk.js.map": "./static/js/1.53ba2ff9.chunk.js.map",
+  "runtime~main.js": "./static/js/runtime~main.4a686d48.js",
+  "runtime~main.js.map": "./static/js/runtime~main.4a686d48.js.map",
+  "static/media/pokeball.svg": "./static/media/pokeball.6b4ffa55.svg",
+  "static/media/Header.css": "./static/media/PokemonSolidNormal.e79371fd.ttf",
+  "static/media/lens.svg": "./static/media/lens.14cc8cc9.svg",
+  "static/css/main.e7321dc9.chunk.css.map": "./static/css/main.e7321dc9.chunk.css.map",
+  "index.html": "./index.html",
+  "precache-manifest.60f5ea8d26326d902ab3b4fa3aa699ed.js": "./precache-manifest.60f5ea8d26326d902ab3b4fa3aa699ed.js",
+  "service-worker.js": "./service-worker.js"
+}
