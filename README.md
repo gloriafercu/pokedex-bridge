@@ -29,3 +29,6 @@ To run the server:
 
     npm start
 
+This projecto has been deployed into production with the [Surge sh](https://surge.sh/).
+
+    http://pokedex-react-router.surge.sh/

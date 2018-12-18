@@ -5,7 +5,6 @@ import { Spinner } from '../spinner/Spinner';
 import { PokemonList } from '../pokemonlist/PokemonList';
 import { Details } from '../details/Details';
 import { Footer } from '../footer/Footer';
-import { NotFound } from '../notfound/NotFound';
 import { Switch, Route } from 'react-router-dom';
 import './App.css';
 
@@ -75,7 +74,6 @@ class App extends Component {
         <Route path="/details/:id" render={(props) =>
           <Details pokemons={filteredPokemons.filter(poke => poke.id == props.match.params.id)} />
         } />
-        <Route component={NotFound} />
       </Switch>
     );
   }
